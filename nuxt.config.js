@@ -15,7 +15,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://wallpapercave.com/w/wp2506795' }
+      { rel: 'icon', type: 'image/x-icon', href: 'http://cdn.onlinewebfonts.com/svg/img_153948.png' }
     ]
   },
 

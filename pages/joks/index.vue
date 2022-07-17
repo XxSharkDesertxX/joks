@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
 
         <Joks v-for="jok in joks" :key="jok.id"
             :id="jok.id"
@@ -12,38 +12,54 @@
 <script>
 import axios from 'axios'
 export default {
-    head(){
-        return{
-            title:"Joks page",
-            meta:[
+ head(){
+     return{
+         title:"Joks page",
+         meta:[
                 {
-                    hid:"discriptdsion",
+                 hid:"discriptdsion",
                     name:"other dissdripation",
                     content:"this is a content for joks page"
-                }
+             }
             ],
         }
     },
 
-    data() {
-        return {
-            joks:[]
-        }
-    },
 
-   async created(){
-        const config ={
+
+
+// asyncdata in vuex
+    async asyncData( ) {
+        const conf ={
             headers:{
-                Accept : "application/json"
+                Accept : 'application/json'
             }
         }
         try {
-            let res = await axios.get("https://icanhazdadjoke.com/search", config);
-            this.joks = res.data.results
+            let res = await axios.get("https://icanhazdadjoke.com/search",conf)
+            return {joks : res.data.results}
         } catch (error) {
             console.log(error);
         }
-    }
+    },
+
+
+// Async cerated vue :
+
+//    async created(){
+//         const config ={
+//             headers:{
+//                 Accept : "application/json"
+//             }
+//         }
+//         try {
+//             let res = await axios.get("https://icanhazdadjoke.com/search", config);h
+//             this.joks = res.data.results
+//         } catch (error) {             console.log(error);
+//         }
+//     }
+
+
 }
 </script>
 
